@@ -21,8 +21,7 @@ jobs:
         uses: wearerequired/lint-action@v3
         with:
           eslint: true
-          prettier: true
-          working-directory: frontend
+          eslint-dir: frontend
   build-push:
     needs: [lint-code]
     runs-on: ubuntu-latest
