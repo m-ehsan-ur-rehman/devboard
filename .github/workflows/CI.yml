@@ -15,12 +15,14 @@ jobs:
         with:
           node-version: 24  
       - name: installs dependencies
+        working-directory: ./frontend
         run: npm ci --legacy-peer-deps
       - name: Run linters
         uses: wearerequired/lint-action@v3
         with:
           eslint: true
           prettier: true
+          working-directory: frontend
   build-push:
     needs: [lint-code]
     runs-on: ubuntu-latest
